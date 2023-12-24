@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    outline: none;
+    font-family: 'roboto' sans-serif;
+}
+body{
+    background-color: whitesmoke;
+    padding: 15px;
+    margin: 0;
+    width: 350px;
+}
+label{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 13px;
+}
+textarea, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+textarea{
+    resize: none;
+    overflow-y: scroll;
+}
+button{
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0,5s ease;
+}
+button:hover{
+    background-color: rgb(126, 21, 224);
+    font-weight: bold;
+}
+#outputText{
+    background-color: white;
+    min-height: 80px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 13px;
+    white-space: pre-wrap;
+
+}
