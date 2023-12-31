@@ -1,3 +1,4 @@
+// cargar paises en options
 const selectTags = document.querySelectorAll('select');
 
 selectTags.forEach((tag, id) => {
@@ -9,13 +10,16 @@ selectTags.forEach((tag, id) => {
     }
 });
 
-document.getElementById('translateBtn').addEventListener('click', function () {
+// cargar en variales las condiciones a traducir
+document.getElementById('translateBtn').addEventListener('click', 
+function () {
     const text = document.getElementById('inputText').value;
     const translateFrom = document.getElementById('translateFrom').value;
     const translateTo = document.getElementById('translateTo').value;
     translateText(text, translateFrom, translateTo);
 });
 
+// API para la traduccion del texto
 function translateText(inputText, fromLang, toLang) {
     const apiUrl = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(inputText)}&langpair=${fromLang}|${toLang}`;
 
@@ -36,6 +40,7 @@ function translateText(inputText, fromLang, toLang) {
 function removeQuestionMarks(text) {
     return text.replace(/^¿+|¿+$/g, '');
 }
+// funcion para el speak
 function speakText(text) {
     const speechSynthesis = window.speechSynthesis;
     const speechUtterance = new SpeechSynthesisUtterance(text);
@@ -44,7 +49,8 @@ function speakText(text) {
     speechSynthesis.speak(speechUtterance);
 }
 
-document.getElementById('speakBtn').addEventListener('click', function () {
+document.getElementById('speakBtn').addEventListener('click', 
+function () {
     const translatedText = document.getElementById('outputText').innerText;
     speakText(translatedText);
 });
